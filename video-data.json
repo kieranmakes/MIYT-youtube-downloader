@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://youtube.com/watch?v=o3WdLtpWM_c",
+    "other_listing_urls": [
+      "https://youtube.com/watch?v=oUbpmjOgmmU",
+      "https://youtube.com/watch?v=u31thuMehjM",
+      "https://youtube.com/watch?v=7ZdwcTAxudY",
+      "https://youtube.com/watch?v=pedgIfGqHcw",
+      "https://youtube.com/watch?v=_tfi3dDSQG4"
+    ],
+    "meta": {
+      "title": "FISHER - Losing It",
+      "img": "https://i.ytimg.com/vi/o3WdLtpWM_c/maxresdefault.jpg",
+      "lengthMinutes": "6:40",
+      "upload_author": "blanc",
+      "song_title": "Losing It",
+      "artist": "FISHER"
+    }
+  },
+  {
+    "url": "https://youtube.com/watch?v=Jxo_6R4vOhE",
+    "other_listing_urls": [
+      "https://youtube.com/watch?v=1uB9EIYiOSQ",
+      "https://youtube.com/watch?v=MBhXwT7w-gE",
+      "https://youtube.com/watch?v=5XF6rYuALAQ",
+      "https://youtube.com/watch?v=aSmhk9mIATA",
+      "https://youtube.com/watch?v=8K3Lr2H_xE0"
+    ],
+    "meta": {
+      "title": "STAR89 - Hypnotized (OFFICIAL AUDIO)",
+      "img": "https://i.ytimg.com/vi/Jxo_6R4vOhE/maxresdefault.jpg",
+      "lengthMinutes": "2:50",
+      "upload_author": "STEREOHYPE",
+      "song_title": "Hypnotized (Original Mix)",
+      "artist": "STAR89"
+    }
+  },
+  {
+    "url": "https://youtube.com/watch?v=z5LW07FTJbI",
+    "other_listing_urls": [
+      "https://youtube.com/watch?v=trS2nrkN0_k",
+      "https://youtube.com/watch?v=48apI4bpnSo",
+      "https://youtube.com/watch?v=NUiNTNOCKL4",
+      "https://youtube.com/watch?v=L8tb7ffIsyg",
+      "https://youtube.com/watch?v=gbcG2TI4GBk"
+    ],
+    "meta": {
+      "title": "Zombie Nation - Kernkraft 400",
+      "img": "https://i.ytimg.com/vi/z5LW07FTJbI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAom6vO4qiXqWW8zJIOPgvJtmmCjw",
+      "lengthMinutes": "3:30",
+      "upload_author": "tistlo",
+      "song_title": "Kernkraft 400 (Original mix)",
+      "artist": "Zombie Nation"
+    }
+  }
+]
