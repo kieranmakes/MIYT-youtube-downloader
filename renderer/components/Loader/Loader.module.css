@@ -1,0 +1,46 @@
+.logo {
+  height: 250px;
+  width: 250px;
+  animation-name: logoAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.Loader {
+  margin: -8px;
+  overflow: hidden;
+  background-color: #484d5c;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  animation-name: loaderAnimation;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loaderAnimation {
+  0% {
+    opacity: 0.2;
+    background-color: red;
+  }
+  50% {
+    opacity: 0.8;
+  background-color: yellow;
+}
+  100% {
+    opacity: 0.2;
+    background-color: red;
+  }
+}
+
+
+@keyframes logoAnimation {
+  0% {
+    transform:translateY(0)
+  }
+  100% {
+    transform:translateY(200px)
+  }
+}

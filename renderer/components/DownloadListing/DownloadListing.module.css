@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+
+.downloadListing {
+  margin: -8px;
+  overflow: hidden;
+  background-color: #484d5c;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.downloadListingContainer {
+  margin: 0 auto;
+  margin-top: 10px;
+  border: 4px solid rgb(153,153,153);
+  border-radius: 10px 10px 0 0;
+  width: 80vw;
+  height: 54vh;
+  overflow-y: scroll;
+  box-shadow: inset 0 0 40px rgb(72, 77,91);
+}
+
+.hr {
+  margin: 12px 20px 0 20px;
+  border: none;
+  border-top: 3px solid rgb(153,153,153); 
+  background-color: rgb(153,153,153);
+}
+
+.backButton {
+  display: block;
+  box-shadow: 0 0 0 3px rgb(153,153,153);
+  border: 3px solid rgb(72, 77,91);
+  background-color: rgb(72, 77,91);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  cursor: pointer;
+  transform: translate(-14px, -14px)
+}
+.backButton:hover{
+  background-color: #c49f00;
+}
+
+
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.listingTile {
+  margin: 10px 20px;
+  font-family: Oswald, sans-serif;
+  color: #fff;
+  padding: 10px 10px 0 20px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+.videoTitle {
+  margin: 0 0 0 16px;
+}
+
+.deleteBtn {
+  outline: none;
+  background-color: rgb(211,64,69);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
+.deleteBtn:hover { 
+    background-color: #a13333; 
+}
+
+.editBtn {
+  outline: none;
+  background-color: rgb(250, 204, 70);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
+.editBtn:hover{
+  background-color: #c49f00
+}
+
+.miniBtn {
+  border: 2px solid #ffffff33;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 0 4px;
+  background-color: rgb(72, 77, 91);
+  color: #fff;
+}
+.miniBtn:hover {
+  border: 2px solid #ffffff55;
+  outline: none;
+  cursor: pointer;
+  color: #ffffffaa;
+}
+.miniBtn:focus {
+  outline: none;
+}
+
+.downloadButton {
+  display: block;
+  outline: none;
+  margin: 8px auto;
+  width: 80.7%;
+  height: 58px;
+  cursor: pointer;
+  background-color: #00e763;
+  border-radius: 0 0 15px 15px;
+}
+.downloadButton:hover {
+  background-color: #009942;
+}
+
+.changeDirLink {
+  color: #c0ccd4;
+  font-family: Oswald, sans-serif;
+  font-size: 23px;
+  opacity: 0.6;
+  cursor: pointer;
+  margin: 30px 0 0 0;
+}
+.changeDirLink:hover {
+  opacity: 0.9;
+}
+
+.directoryPath {
+  font-family: Oswald, sans-serif;
+  background-color: rgba(62, 67, 81, 0.6);
+  color: #ffffff88;
+  padding: 4px 8px;
+  border-radius: 4px;
+}

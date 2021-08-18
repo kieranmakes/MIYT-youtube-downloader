@@ -1,0 +1,55 @@
+
+.multipleVideoSearch {
+  margin: -8px;
+  overflow: hidden;
+  background-color: #484d5c;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  height: 150px;
+  width: 150px;
+}
+
+.textArea {
+  display: inline-block;
+  color: #555555;
+  resize: none;
+  width: 70vw;
+  height: 40vh;
+  /* border: 10px solid #fff; */
+  border-radius: 10px 10px 0 0;
+  font-size: 18px;
+  padding: 6vh 4vw;
+}
+.textArea::placeholder {
+  opacity: 0.5;
+  text-align: center;
+  padding-top: 28px;
+}
+.textArea:focus{
+  outline: none;
+}
+
+.submit{
+    display: block;
+    position: relative;
+    outline: none;
+
+    margin-top: 5px;
+    
+    height: 58px;
+    width: 78vw;
+
+    background-color: #00e763;
+    border-radius: 0 0 10px 10px;
+}
+
+.submit:hover{
+    cursor: pointer;
+    background-color: #009942;
+}
