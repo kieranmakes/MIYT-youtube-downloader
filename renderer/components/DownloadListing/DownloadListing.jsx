@@ -136,7 +136,7 @@ const DownloadListing = (props) => {
         alt="MIYT"
       />
       <div className={classes.downloadListingContainer}>
-        <p>metadata: {JSON.stringify(metadataList)}</p>
+        {/* <p>metadata: {JSON.stringify(metadataList)}</p> */}
         <div
           className={classes.backButton}
           onClick={() => props.goBack()}
