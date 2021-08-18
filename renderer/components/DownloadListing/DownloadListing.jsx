@@ -4,15 +4,17 @@ import axios from "axios";
 import { ipcRenderer } from "electron";
 
 import MetadataPopup from "../MetadataPopup/MetadataPopup";
+import VideoSelectorPopup from "../VideoSelectorPopup/VideoSelectorPopup";
 
 const DownloadListing = (props) => {
   const [state, setState] = React.useState({
     directoryPath: undefined,
     listings: props.listings,
     showMetaPopup: false,
+    showVideoSelectorPopup: false,
     selectedIndex: undefined,
   });
-
+  const [selectedVideoIndexes, setSelectedVideoIndexes] = React.useState([]);
   const [metadataList, setMetadataList] = React.useState([]);
 
   const getHomeDir = () => {
@@ -41,30 +43,66 @@ const DownloadListing = (props) => {
     props.onDownloadStarted();
   };
 
+  const removeListing = (index) => {
+    if (state.listings.length > 1) {
+      let _selectedVideoIndexes = selectedVideoIndexes;
+      let _metadataList = metadataList;
+      let _listings = state.listings;
+      _selectedVideoIndexes.splice(index, 1);
+      _metadataList.splice(index, 1);
+      _listings.splice(index, 1);
+      setMetadataList(_metadataList);
+      setSelectedVideoIndexes(_selectedVideoIndexes);
+      setState({ ...state, listings: _listings });
+    }
+  };
+
+  const updateSelectedVideoIndexes = () => {
+    // console.log("updating Selected video indexes:: " + selectedVideoIndexes);
+    let _selectedVideoIndexes = [];
+    for (let i = 0; i < state.listings.length; i++) {
+      console.log(`i am ${i}`);
+      _selectedVideoIndexes[i] = 0;
+    }
+    console.log(
+      "selectedVideoIndexes: ",
+      JSON.stringify(_selectedVideoIndexes)
+    );
+    setSelectedVideoIndexes(_selectedVideoIndexes);
+  };
+
   const updateMetadataList = (metadata) => {
+    console.log("hello");
     if (metadata) {
       let _metadataList = metadataList;
       _metadataList[state.selectedIndex] = metadata;
       setState({ ...state, showMetaPopup: false });
       setMetadataList(_metadataList);
     } else {
-      let metadataList = [];
-      for (let i = 0; i < state.listings.length; i++) {
-        metadataList[i] = {
-          trackTitle: state.listings[i].data[0].title,
-          artist: "",
-          genre: "",
-        };
-        console.log(state.listings[i].data[0].title);
+      try {
+        let metadataList = [];
+        for (let i = 0; i < state.listings.length; i++) {
+          metadataList[i] = {
+            trackTitle: state.listings[i].data[0].title,
+            artist: "",
+            genre: "",
+          };
+          console.log(state.listings[i].data[0].title);
+        }
+        console.log(JSON.stringify(metadataList));
+        setMetadataList(metadataList);
+      } catch (e) {
+        console.log("ERROR ::  " + e);
       }
-      console.log(JSON.stringify(metadataList));
-      setMetadataList(metadataList);
     }
   };
 
   const openMetaPopup = (index) => {
-    console.log(metadataList[index]);
     setState({ ...state, showMetaPopup: true, selectedIndex: index });
+  };
+
+  const openVideoSelectorPopup = (index) => {
+    setState({ ...state, showVideoSelectorPopup: true, selectedIndex: index });
   };
 
   React.useEffect(() => {
@@ -82,6 +120,7 @@ const DownloadListing = (props) => {
       }
     } else {
       if (metadataList.length === 0) updateMetadataList();
+      if (selectedVideoIndexes.length === 0) updateSelectedVideoIndexes();
     }
   }, []);
 
@@ -97,7 +136,9 @@ const DownloadListing = (props) => {
             <div key={i}>
               <div className={classes.listingTile}>
                 <div className={classes.videoTitle}>
-                  {listing.data[0].title}
+                  {metadataList.length > 0
+                    ? metadataList[i].trackTitle
+                    : state.listings[i].title}
                 </div>
                 <div className={classes.options}>
                   <div className={classes.miniBtn}>MP3</div>
@@ -107,8 +148,18 @@ const DownloadListing = (props) => {
                   >
                     META
                   </div>
-                  <div className={classes.editBtn}></div>
-                  <div className={classes.deleteBtn}></div>
+                  <div
+                    className={classes.editBtn}
+                    onClick={() => {
+                      openVideoSelectorPopup(i);
+                    }}
+                  ></div>
+                  <div
+                    className={classes.deleteBtn}
+                    onClick={() => {
+                      removeListing(i);
+                    }}
+                  ></div>
                 </div>
               </div>
               <hr className={classes.hr} />
@@ -116,6 +167,18 @@ const DownloadListing = (props) => {
           );
         })
       : "";
+
+  let videoSelectorPopup = state.showVideoSelectorPopup ? (
+    <VideoSelectorPopup
+      metadata={metadataList}
+      index={state.selectedIndex}
+      hideBackdrop={() => setState({ ...state, showVideoSelectorPopup: false })}
+      submitMetadata={(metadata) => updateMetadataList(metadata)}
+      listings={state.listings}
+    />
+  ) : (
+    ""
+  );
 
   let metaPopup = state.showMetaPopup ? (
     <MetadataPopup
@@ -164,6 +227,7 @@ const DownloadListing = (props) => {
         ""
       )}
       {metaPopup}
+      {videoSelectorPopup}
     </div>
   );
 };

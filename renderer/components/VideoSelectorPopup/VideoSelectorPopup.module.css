@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
 
-.metadataPopup {
+.VideoSelectorPopup {
   position: absolute;
   width: 100vw;
   height: 100vh;
   font-family: Oswald, sans-serif;
+
   margin: 0;
   padding: 0;
 }
@@ -34,8 +35,8 @@
 
 .popupContent {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 540px;
+  height: 520px;
   background-color: #555;
   border-radius: 10px;
   left: 50%;
@@ -46,43 +47,52 @@
   color: #fff;
 }
 
-
-.input{
-  width: 300px;
-  /* background-color:#111; */ 
+.videoSelectorContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  margin: 8px 0;
+  justify-content: space-between;
+  height: 60%;
 }
 
-.textInput {
-  -webkit-appearance: none;
-  color: #000;
-  width: 180px;
-  height: 16px;
-
-  padding-left: 2px;
-
-  border: 10px solid #fff;
-  border-radius: 5px;
-  font-size: 14px;
-  font-family: 'Oswald', sans-serif;
-}  
-.textInput::placeholder {
-  color: #60667a;
-  opacity: 0.5;
+.arrowButton {
+  user-select: none; /* supported by Chrome and Opera */
+  font-size: 60px; 
+  opacity: 0.7;
+  margin-top: -40px;
 }
-.textInput:focus {
-  outline: none;
+.arrowButton:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.previewImg {
+  width: 360px;
+  height: 220px;
+  border-radius: 10px;
+  margin-top: 120px;
+}
+
+.videoTitle {
+  margin: 10px 0 0 0;
+  font-size: 18px;
+}
+
+.duration {
+  margin: 5px 0 0 0;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.videoDetailsContainer {
+  height: 120px;
+  width: 340px;
+  border-radius: 20px;
+  padding: 3px 8px;
 }
 
 .submitButton {
-  display: block;
   outline: none;
-  margin: 20px auto;
-  width: 300px;
+  width: 360px;
   height: 42px;
   cursor: pointer;
   background-color: #00e763;
