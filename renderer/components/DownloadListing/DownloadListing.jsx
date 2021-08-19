@@ -170,11 +170,15 @@ const DownloadListing = (props) => {
 
   let videoSelectorPopup = state.showVideoSelectorPopup ? (
     <VideoSelectorPopup
-      metadata={metadataList}
       index={state.selectedIndex}
       hideBackdrop={() => setState({ ...state, showVideoSelectorPopup: false })}
       submitMetadata={(metadata) => updateMetadataList(metadata)}
       listings={state.listings}
+      selectedVideoIndexes={selectedVideoIndexes}
+      onUpdateSelectedVideoIndexes={(updatedSelectedVideoIndexes) => {
+        setSelectedVideoIndexes(updatedSelectedVideoIndexes);
+        setState({ ...state, showVideoSelectorPopup: false });
+      }}
     />
   ) : (
     ""

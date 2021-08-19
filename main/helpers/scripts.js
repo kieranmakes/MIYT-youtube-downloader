@@ -14,7 +14,9 @@ export default class Scripts {
         search_term: video_search_term,
         data: {},
       };
-      const video_search_results = await ytsr(video_search_term, { limit: 10 });
+      const filters = await ytsr.getFilters(video_search_term);
+      const filter = filters.get("Type").get("Video");
+      const video_search_results = await ytsr(filter.url, { limit: 10 });
       video_return_data.data = video_search_results.items;
       return_data.push(video_return_data);
     }
