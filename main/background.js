@@ -44,7 +44,12 @@ if (isProd) {
       case "download-list":
         let i = 0;
         for (const url of data.urls) {
-          await s.download_audio(url, data.path, data.titles[i]);
+          await s.download_audio(
+            url,
+            data.path,
+            data.metadataList[i].trackTitle,
+            data.metadataList
+          );
           i++;
         }
         event.reply("asynchronous-reply", "download-complete");

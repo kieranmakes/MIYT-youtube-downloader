@@ -22,11 +22,11 @@ const DownloadListing = (props) => {
   };
 
   const handleDownload = () => {
-    let urlList = state.listings.map((listing) => {
-      return listing.data[0].url;
+    let urlList = state.listings.map((listing, i) => {
+      return listing.data[selectedVideoIndexes[i]].url;
     });
-    let titleList = state.listings.map((listing) => {
-      return listing.data[0].title;
+    let titleList = metadataList.map((listing) => {
+      return listing.trackTitle;
     });
     // console.log(urlList);
     ipcRenderer.on("asynchronous-reply", (event, response) => {
@@ -79,6 +79,7 @@ const DownloadListing = (props) => {
       setState({ ...state, showMetaPopup: false });
       setMetadataList(_metadataList);
     } else {
+      // used for initial population of metadata
       try {
         let metadataList = [];
         for (let i = 0; i < state.listings.length; i++) {
@@ -175,6 +176,11 @@ const DownloadListing = (props) => {
       submitMetadata={(metadata) => updateMetadataList(metadata)}
       listings={state.listings}
       selectedVideoIndexes={selectedVideoIndexes}
+      onUpdateMetadataTitle={(title) => {
+        let _metadataList = metadataList;
+        _metadataList[state.selectedIndex].trackTitle = title;
+        setMetadataList(_metadataList);
+      }}
       onUpdateSelectedVideoIndexes={(updatedSelectedVideoIndexes) => {
         setSelectedVideoIndexes(updatedSelectedVideoIndexes);
         setState({ ...state, showVideoSelectorPopup: false });

@@ -26,7 +26,11 @@ const VideoSelectorPopup = (props) => {
   const submitHandler = () => {
     let allVideoIndexes = props.selectedVideoIndexes;
     allVideoIndexes[props.index] = state.currentlySelectedVideoIndex;
+
     props.onUpdateSelectedVideoIndexes(allVideoIndexes);
+    props.onUpdateMetadataTitle(
+      props.listings[props.index].data[state.currentlySelectedVideoIndex].title
+    );
   };
 
   React.useEffect(() => {

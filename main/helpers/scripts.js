@@ -1,6 +1,7 @@
 const fs = require("fs");
 const ytsr = require("ytsr");
 const ffmpeg = require("fluent-ffmpeg");
+const ffmetadata = require("ffmetadata");
 const ytdl = require("ytdl-core");
 
 export default class Scripts {
@@ -26,7 +27,7 @@ export default class Scripts {
   /** @param {String} url
    *  @param {String} path: title
    */
-  download_audio = async (url, path, title, duration) => {
+  download_audio = async (url, path, title, metadata) => {
     return new Promise((resolve, reject) => {
       // let file_size_approx = approx_total_file_size(duration);
       let stream = ytdl(url, { quality: "highestaudio" });
@@ -38,6 +39,7 @@ export default class Scripts {
           // p.targetSize / file_size_approx;
         })
         .on("end", () => {
+          this.set_metadata(`${path}/${title}.mp3`, metadata);
           resolve();
         })
         .on("error", (e) => {
@@ -52,5 +54,11 @@ export default class Scripts {
   approx_total_file_size = (duration_s) => {
     const filesize_kb = 16 * duration_s;
     return filesize_kb;
+  };
+
+  set_metadata = (file_path, metadata) => {
+    ffmetadata.write(file_path, metadata, (err) => {
+      if (err) console.error("Error writing metadata", err);
+    });
   };
 }
