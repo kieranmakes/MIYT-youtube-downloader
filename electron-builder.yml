@@ -1,6 +1,19 @@
-appId: com.example.nextron
-productName: My Nextron App
-copyright: Copyright © 2018 Yoshihide Shiono
+# appId: com.example.nextron
+# productName: My Nextron App
+# copyright: Copyright © 2018 Yoshihide Shiono
+# directories:
+#   output: dist
+#   buildResources: resources
+# files:
+#   - from: .
+#     filter:
+#       - package.json
+#       - app
+# publish: null
+
+appId: com.miyt.kieranwilliams
+productName: MIYT
+copyright: Copyright © 2021 Kieran Williams
 directories:
   output: dist
   buildResources: resources
@@ -9,4 +22,4 @@ files:
     filter:
       - package.json
       - app
-publish: null
+publish: null # see https://www.electron.build/configuration/publish
