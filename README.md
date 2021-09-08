@@ -17,7 +17,7 @@
 ## Download
 
 ### Go to:
-    <a src="https://miyt.xyz">MIYT website</a>
+<a src="https://miyt.xyz">MIYT website</a>
 
 ## Usage
 
