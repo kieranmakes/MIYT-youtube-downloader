@@ -1,4 +1,4 @@
-<p align="center"><img width="100px" src="./resources/assets/logo.svg"></p>
+<p align="center"><img width="400px" src="./resources/assets/logo.svg"></p>
 
 ## Usage
 
