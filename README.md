@@ -16,7 +16,7 @@
 
 ## Download
 
-### Go to: &nbsp; &nbsp;&nbsp; [MIYT Website](https://miyt.xyz)
+### &nbsp;&nbsp; [MIYT Website](https://miyt.xyz)
 
 
 
