@@ -1,6 +1,6 @@
-<p align="center"><img width="50%" src="./resources/assets/logo.svg"></p>
+<p align="left"><img width="50%" src="./resources/assets/logo.svg"></p>
 
-# What is MIYT?
+## What is MIYT?
 ### MIYT is a YouTube downloader desktop application for: Mac OS, Windows, Linux
 
 - Download multiple videos at once, as video or audio
@@ -13,6 +13,8 @@
 
 <br/>
 <p align="center"><img width="90%" src="./resources/assets/miyt.gif"></p>
+
+## 
 
 ## Usage
 
