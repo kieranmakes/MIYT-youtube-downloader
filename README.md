@@ -1,5 +1,16 @@
 <p align="center"><img width="370px" src="./resources/assets/logo.svg"></p>
 
+## MIYT is a YouTube downloader desktop application for: 
+### Mac OS, Windows, Linux
+
+- Download multiple videos at once, as video or audio
+
+- Search by URL or video names
+
+- Edit metadata of downloads
+
+- Change video selection from app
+
 ## Usage
 
 ### Create an App
