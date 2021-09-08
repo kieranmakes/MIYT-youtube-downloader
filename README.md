@@ -20,7 +20,7 @@
 
 
 
-## Usage
+## Developer Usage
 
 ### Create an App
 
