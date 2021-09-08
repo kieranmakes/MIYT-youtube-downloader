@@ -16,7 +16,7 @@
 
 ## Download
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [MIYT Website](https://miyt.xyz)
+### Visit the MIYT website where you can download the application for your OS [MIYT Website](https://miyt.xyz)
 
 
 
