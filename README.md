@@ -19,6 +19,7 @@
 ### [Visit the MIYT website where you can download the application for your OS](https://miyt.xyz)
 
 
+<br/><br/>
 
 ## Developer Usage
 
