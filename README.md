@@ -12,7 +12,7 @@
 - Change video selection from app
 
 
-<p align="center"><img width="370px" src="./resources/assets/video.gif"></p>
+<p align="center"><img width="370px" src="./resources/assets/miyt.gif"></p>
 
 ## Usage
 
